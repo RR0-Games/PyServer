@@ -3,7 +3,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            with open('templates/index.html', 'r') as f:
+            with open('web/static/app.html', 'r') as f:
                 content = f.read()
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
@@ -15,5 +15,5 @@ class MyHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'404: File not found')
 
-httpd = HTTPServer(('', 8000), MyHandler)
+httpd = HTTPServer(('', 4589), MyHandler)
 httpd.serve_forever()
