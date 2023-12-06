@@ -3,7 +3,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            with open('web/static/app.html', 'r') as f:
+            with open('shell/index.html', 'r') as f:
                 content = f.read()
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
